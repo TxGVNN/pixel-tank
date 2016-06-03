@@ -4,6 +4,7 @@
 #include <SDL2/SDL.h>                       // SDL library.
 #include <SDL2/SDL_ttf.h>                   // SDL font library.
 #include <SDL2/SDL_mixer.h>
+#include <string>
 
 class Game
 {
@@ -14,8 +15,13 @@ private:
 public:
 	static const int SCREEN_WIDTH;
 	static const int SCREEN_HEIGHT;
-	
+
 	Game();
+	void init();
+	void input();
+	void update();
+	void render();
+
 };
 
 #endif

@@ -1,5 +1,6 @@
 #ifndef _ENTITY_H_
 #define _ENTITY_H_
+#include "utils.h"
 
 class Entity
 {
@@ -10,7 +11,7 @@ protected:
 	volatile int direction;
 	bool active;
 	virtual void createSprite();
-	virtual void render();
+	virtual void render(SDL_Renderer* renderer);
 	virtual void update();
 	bool changeDirection(int newDirection);
 	void move(int distance);

@@ -15,7 +15,7 @@ Entity::Entity(int x, int y){
 	tdPhai = x + 16;
 }
 void Entity::createSprite(){};
-void Entity::render(){};
+void Entity::render(SDL_Renderer* renderer){};
 void Entity::update(){};
 
 void Entity::refesh(){

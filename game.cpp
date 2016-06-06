@@ -22,27 +22,31 @@ Game::Game(){
 
 	int i = 100;
 	while(i>0){
-		init();
+		render();
 		i--;
 	}
 }
 void Game::init(){
 	SDL_SetRenderDrawColor(renderer, 128, 130, 114, 0);
 	SDL_RenderClear(renderer);
-	// Paddle color.
+
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderDrawLine(renderer, 560, 0, 560, 480);
 
-	// Swap buffers.
 	SDL_RenderPresent(renderer);
+	player = new Player(100,100);
 }
 
 void Game::render(){
+
 	SDL_SetRenderDrawColor(renderer, 128, 130, 114, 0);
 	SDL_RenderClear(renderer);
-	// Paddle color.
+
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderDrawLine(renderer, 560, 0, 560, 480);
-	// Swap buffers.
+
+	player -> render(renderer);
 	SDL_RenderPresent(renderer);
+	// SDL_Delay(100);
+
 }

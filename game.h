@@ -1,17 +1,14 @@
 #ifndef _GAME_H_
 #define _GAME_H_
-
-#include <SDL2/SDL.h>                       // SDL library.
-#include <SDL2/SDL_ttf.h>                   // SDL font library.
-#include <SDL2/SDL_mixer.h>
-#include <string>
+#include "utils.h"
+#include "player.h"
 
 class Game
 {
 private:
 	SDL_Window* window;  // Holds window properties.
 	SDL_Renderer* renderer;  // Holds rendering surface properties.
-
+	Player* player;
 public:
 	static const int SCREEN_WIDTH;
 	static const int SCREEN_HEIGHT;

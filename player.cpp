@@ -15,7 +15,7 @@ void Player::render(SDL_Renderer* renderer){
 	texture = SDL_CreateTextureFromSurface(renderer, img);
 	SDL_Rect *clip = nullptr;
 
-	std::cout << x << " " << y <<std::endl;
+	// std::cout << x << " " << y <<std::endl;
 	SDL_Rect dst;
 	dst.x = x;
 	dst.y = y;

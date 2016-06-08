@@ -9,6 +9,7 @@ private:
 	SDL_Window* window;  // Holds window properties.
 	SDL_Renderer* renderer;  // Holds rendering surface properties.
 	Player* player;
+
 public:
 	static const int SCREEN_WIDTH;
 	static const int SCREEN_HEIGHT;

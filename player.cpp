@@ -1,9 +1,10 @@
 #include "player.h"
 
-Player::Player(SDL_Renderer* renderer, int x, int y):Entity(x,y){
+Player::Player(SDL_Renderer* renderer, int x, int y, int direction):Entity(x,y,direction){
 	Player::renderer = renderer;
 	Player::x = x;
 	Player::y = y;
+	Player::direction = direction;
 	noncollision = true;
 	loop_img =0;
 

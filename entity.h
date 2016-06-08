@@ -28,7 +28,7 @@ public:
 	double degrees;
 	bool noncollision;
 	int tdNong, tdVai, tdMong, tdChan, tdTrai, tdPhai;
-	Entity(int x, int y);
+	Entity(int x, int y, int direction);
 	void refresh();
 	bool checkCollision(Entity other);
 };

@@ -48,7 +48,7 @@ void Game::init(){
 	SDL_RenderDrawLine(renderer, SCREEN_LINE, 0, SCREEN_LINE, SCREEN_HEIGHT);
 
 	SDL_RenderPresent(renderer);
-	player = new Player(renderer, 100,100);
+	player = new Player(renderer, 100,100,0);
 }
 
 void Game::update(){

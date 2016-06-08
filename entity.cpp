@@ -7,7 +7,8 @@ const int Entity::DIRECTION_RIGHT = 1;//RIGHT
 const int Entity::DIRECTION_DOWN = 2;//DOWN
 const int Entity::DIRECTION_LEFT = 3;//LEFT
 
-Entity::Entity(int x, int y){
+Entity::Entity(int x, int y, int direction){
+	direction = direction;
 	tdNong = y - 16;
 	tdVai = y - 5;
 	tdMong = y + 5;

@@ -10,7 +10,7 @@ private:
 	SDL_Texture *texture;
 	int loop_img;
 public:
-	Player(SDL_Renderer* renderer, int x, int y);
+	Player(SDL_Renderer* renderer, int x, int y, int direction);
 	void render();
 	void control(bool[]);
 };

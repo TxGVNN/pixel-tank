@@ -11,6 +11,8 @@ private:
 public:
 	Player(int x, int y);
 	void render(SDL_Renderer* renderer);
+	void control(bool[]);
 };
+
 
 #endif

@@ -28,7 +28,7 @@ public:
 	bool noncollision;
 	int tdNong, tdVai, tdMong, tdChan, tdTrai, tdPhai;
 	Entity(int x, int y);
-	void refesh();
+	void refresh();
 	bool checkCollision(Entity other);
 };
 

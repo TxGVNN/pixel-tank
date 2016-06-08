@@ -1,10 +1,11 @@
 #include "entity.h"
+#include "game.h"
 
-const int Entity::SPEED = 0;
+const int Entity::SPEED = 10;
 const int Entity::DIRECTION_UP = 0;//UP
 const int Entity::DIRECTION_RIGHT = 1;//RIGHT
-const int Entity::DIRECTION_DOWN = 2;//LEFT
-const int Entity::DIRECTION_LEFT = 3;//DOWN
+const int Entity::DIRECTION_DOWN = 2;//DOWN
+const int Entity::DIRECTION_LEFT = 3;//LEFT
 
 Entity::Entity(int x, int y){
 	tdNong = y - 16;
@@ -18,7 +19,7 @@ void Entity::createSprite(){};
 void Entity::render(SDL_Renderer* renderer){};
 void Entity::update(){};
 
-void Entity::refesh(){
+void Entity::refresh(){
 	switch (direction) {
 		case DIRECTION_UP:
 			tdNong= y - 16;
@@ -110,7 +111,7 @@ void Entity::move(int distance) {
 }
 bool Entity::runAvailble(){
 	bool avail = true;
-	if (((x <= 16) && (direction == DIRECTION_LEFT)) || ((x >= 183) && (direction == DIRECTION_RIGHT)) || ((y <= 16) && (direction == DIRECTION_UP)) || ((y >= 300) && (direction == DIRECTION_DOWN))) {
+	if (((x <= 0) && (direction == DIRECTION_LEFT)) || ((x >= Game::SCREEN_LINE - 33) && (direction == DIRECTION_RIGHT)) || ((y <= 0) && (direction == DIRECTION_UP)) || ((y >= Game::SCREEN_HEIGHT -33) && (direction == DIRECTION_DOWN))) {
 		avail = false;
 	}
 	return avail;

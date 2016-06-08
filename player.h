@@ -8,6 +8,7 @@ class Player: public Entity
 private:
 	SDL_Renderer* renderer;
 	SDL_Texture *texture;
+	int loop_img;
 public:
 	Player(SDL_Renderer* renderer, int x, int y);
 	void render();

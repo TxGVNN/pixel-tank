@@ -5,6 +5,7 @@ Player::Player(SDL_Renderer* renderer, int x, int y):Entity(x,y){
 	Player::x = x;
 	Player::y = y;
 	noncollision = true;
+	loop_img =0;
 
 	IMG_Init(IMG_INIT_JPG);
 	SDL_Surface* img = IMG_Load("res/images/player.png");
@@ -19,7 +20,7 @@ Player::Player(SDL_Renderer* renderer, int x, int y):Entity(x,y){
 void Player::render(){
 	SDL_Rect clip;
 	clip.x = 0;
-	clip.y = 0;
+	clip.y = loop_img*33;
 	clip.w = 33;
 	clip.h = 33;
 	// std::cout << x << " " << y <<std::endl;
@@ -40,4 +41,5 @@ void Player::control(bool control[]){
 			refresh();
 		}
 	}
+	loop_img = (loop_img +1) % 2 ;
 }

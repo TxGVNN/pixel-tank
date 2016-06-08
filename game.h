@@ -13,8 +13,9 @@ private:
 public:
 	static const int SCREEN_WIDTH;
 	static const int SCREEN_HEIGHT;
-
+	static const int SCREEN_LINE;
 	Game();
+	void start();
 	void init();
 	void input();
 	void update();

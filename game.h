@@ -15,6 +15,7 @@ public:
 	static const int SCREEN_HEIGHT;
 	static const int SCREEN_LINE;
 	Game();
+	~Game();
 	void start();
 	void init();
 	void input();

@@ -22,7 +22,15 @@ Game::Game(){
 
 	init();
 }
+Game::~Game(){
 
+	// Destroy renderer and window.
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
+
+	// Shuts down SDL.
+	SDL_Quit();
+}
 void Game::start()
 {
 	int i = 100;

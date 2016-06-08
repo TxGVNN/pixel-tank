@@ -11,7 +11,7 @@ protected:
 	volatile int direction;
 	bool active;
 	virtual void createSprite();
-	virtual void render(SDL_Renderer* renderer);
+	virtual void render();
 	virtual void update();
 	bool changeDirection(int newDirection);
 	void move(int distance);
@@ -25,6 +25,7 @@ public:
 	static const int DIRECTION_LEFT;//DOWN
 	int oldX,oldY, x,y;
 	int width, height;
+	double degrees;
 	bool noncollision;
 	int tdNong, tdVai, tdMong, tdChan, tdTrai, tdPhai;
 	Entity(int x, int y);

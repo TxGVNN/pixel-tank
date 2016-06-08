@@ -14,9 +14,11 @@ Entity::Entity(int x, int y){
 	tdChan = y + 16;
 	tdTrai = x - 16;
 	tdPhai = x + 16;
+	degrees = 0;
+
 }
 void Entity::createSprite(){};
-void Entity::render(SDL_Renderer* renderer){};
+void Entity::render(){};
 void Entity::update(){};
 
 void Entity::refresh(){
@@ -67,16 +69,16 @@ void Entity::refresh(){
 
 		switch (direction) {
 			case DIRECTION_UP:
-				// noop
+				degrees = 0;
 				break;
 			case DIRECTION_DOWN:
-				// ROT180
+				degrees = 180;
 				break;
 			case DIRECTION_LEFT:
-				// ROT 270
+				degrees = -90;
 				break;
 			case DIRECTION_RIGHT:
-				// ROT 70
+				degrees = +90;
 				break;
 		}
 	}

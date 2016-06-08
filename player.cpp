@@ -1,21 +1,22 @@
 #include "player.h"
 
-Player::Player(int x, int y):Entity(x,y){
+Player::Player(SDL_Renderer* renderer, int x, int y):Entity(x,y){
+	Player::renderer = renderer;
 	Player::x = x;
 	Player::y = y;
 	noncollision = true;
+
 	IMG_Init(IMG_INIT_JPG);
-	img = IMG_Load("res/images/player.png");
+	SDL_Surface* img = IMG_Load("res/images/player.png");
 	IMG_Quit();
 	if (img == NULL) {
 		std::cout << "SDL_LoadBMP Error: " << SDL_GetError() << std::endl;
 	}
-	// HERE shoudL SDL_CreateTextureFromSurface
-	// HERE SDL_FreeSurface( img );
+	texture = SDL_CreateTextureFromSurface(renderer, img);
+	SDL_FreeSurface( img );
 }
 
-void Player::render(SDL_Renderer* renderer){
-	texture = SDL_CreateTextureFromSurface(renderer, img);
+void Player::render(){
 	SDL_Rect clip;
 	clip.x = 0;
 	clip.y = 0;
@@ -28,7 +29,7 @@ void Player::render(SDL_Renderer* renderer){
 	dst.w = 33;
 	dst.h = 33;
 
-	SDL_RenderCopy(renderer, texture, &clip, &dst); // Copy the texture into render
+	SDL_RenderCopyEx(renderer, texture, &clip, &dst, degrees, NULL, SDL_FLIP_NONE ); // Copy the texture into render
 }
 
 void Player::control(bool control[]){

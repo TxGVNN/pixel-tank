@@ -6,11 +6,11 @@
 class Player: public Entity
 {
 private:
-	SDL_Surface* img;
+	SDL_Renderer* renderer;
 	SDL_Texture *texture;
 public:
-	Player(int x, int y);
-	void render(SDL_Renderer* renderer);
+	Player(SDL_Renderer* renderer, int x, int y);
+	void render();
 	void control(bool[]);
 };
 

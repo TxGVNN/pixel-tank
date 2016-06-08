@@ -40,7 +40,13 @@ void Game::init(){
 	SDL_RenderDrawLine(renderer, SCREEN_LINE, 0, SCREEN_LINE, SCREEN_HEIGHT);
 
 	SDL_RenderPresent(renderer);
-	player = new Player(100,100);
+	player = new Player(renderer, 100,100);
+}
+
+void Game::update(){
+	// Entity *entity;
+	player -> control(Event::control);
+
 }
 
 void Game::render(){
@@ -51,7 +57,7 @@ void Game::render(){
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderDrawLine(renderer, 560, 0, 560, 480);
 
-	player -> render(renderer);
+	player -> render();
 	SDL_RenderPresent(renderer);
 	SDL_Delay(50);
 }
@@ -63,8 +69,3 @@ void Game::input(){
 	std::cout<<std::endl;
 }
 */
-void Game::update(){
-	// Entity *entity;
-	player -> control(Event::control);
-
-}

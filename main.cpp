@@ -7,5 +7,4 @@ int main(int argc, char *argv[])
 	SDL_CreateThread(Event::checkEvent,"checkEvent", (void *)NULL);
 	Game game;
 
-
 }

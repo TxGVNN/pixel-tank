@@ -9,16 +9,23 @@ Player::Player(int x, int y):Entity(x,y){
 	if (img == NULL) {
 		std::cout << "SDL_LoadBMP Error: " << SDL_GetError() << std::endl;
 	}
+	// HERE shoudL SDL_CreateTextureFromSurface
+	// HERE SDL_FreeSurface( img );
 }
 
 void Player::render(SDL_Renderer* renderer){
 	texture = SDL_CreateTextureFromSurface(renderer, img);
-	SDL_Rect *clip = nullptr;
-
+	SDL_Rect clip;
+	clip.x = 0;
+	clip.y = 0;
+	clip.w = 33;
+	clip.h = 33;
 	// std::cout << x << " " << y <<std::endl;
 	SDL_Rect dst;
-	dst.x = x;
-	dst.y = y;
-	SDL_QueryTexture(texture, nullptr, nullptr, &dst.w, &dst.h);
-	SDL_RenderCopy(renderer, texture, clip, &dst); // Copy the texture into render
+	dst.x = 100;
+	dst.y = 100;
+	dst.w = 33;
+	dst.h = 33;
+
+	SDL_RenderCopy(renderer, texture, &clip, &dst); // Copy the texture into render
 }

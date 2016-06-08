@@ -26,6 +26,11 @@ int Event::checkEvent(void *data){
 					Event::control[0] = true;
 					break;
 
+					case SDLK_RIGHT:
+					std::cout<<"RIGHT"<<std::endl;
+					Event::control[1] = true;
+					break;
+
 					case SDLK_DOWN:
 					std::cout<<"DOWN"<<std::endl;
 					Event::control[2] = true;
@@ -33,12 +38,12 @@ int Event::checkEvent(void *data){
 
 					case SDLK_LEFT:
 					std::cout<<"LEFT"<<std::endl;
-					Event::control[1] = true;
+					Event::control[3] = true;
 					break;
 
-					case SDLK_RIGHT:
-					std::cout<<"RIGHT"<<std::endl;
-					Event::control[3] = true;
+					case SDLK_SPACE:
+					std::cout<<"SPACE"<<std::endl;
+					Event::control[4] = true;
 					break;
 
 				}
@@ -53,6 +58,11 @@ int Event::checkEvent(void *data){
 					Event::control[0] = false;
 					break;
 
+					case SDLK_RIGHT:
+					std::cout<<"U_RIGHT"<<std::endl;
+					Event::control[1] = false;
+					break;
+
 					case SDLK_DOWN:
 					std::cout<<"U_DOWN"<<std::endl;
 					Event::control[2] = false;
@@ -60,12 +70,12 @@ int Event::checkEvent(void *data){
 
 					case SDLK_LEFT:
 					std::cout<<"U_LEFT"<<std::endl;
-					Event::control[1] = false;
+					Event::control[3] = false;
 					break;
 
-					case SDLK_RIGHT:
-					std::cout<<"U_RIGHT"<<std::endl;
-					Event::control[3] = false;
+					case SDLK_SPACE:
+					std::cout<<"SPACE"<<std::endl;
+					Event::control[4] = true;
 					break;
 
 				}

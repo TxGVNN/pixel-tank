@@ -2,6 +2,7 @@
 #define _GAME_H_
 #include "utils.h"
 #include "player.h"
+#include "bullet.h"
 
 class Game
 {

@@ -75,7 +75,7 @@ int Event::checkEvent(void *data){
 
 					case SDLK_SPACE:
 					std::cout<<"SPACE"<<std::endl;
-					Event::control[4] = true;
+					Event::control[4] = false;
 					break;
 
 				}

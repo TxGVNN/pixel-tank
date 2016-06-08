@@ -1,13 +1,13 @@
 #include "game.h"
 #include "event.h"
 
+
 const int Game::SCREEN_WIDTH = 640;
 const int Game::SCREEN_HEIGHT = 480;
 const int Game::SCREEN_LINE = 560;
 
 Game::Game(){
 	SDL_Init(SDL_INIT_EVERYTHING);
-
 	SDL_ShowCursor(0);
 
 	window = SDL_CreateWindow("Pixel Tank",
@@ -35,6 +35,7 @@ void Game::start()
 {
 	int i = 100;
 	while(i>0){
+		input();
 		update();
 		render();
 		i--;
@@ -53,7 +54,7 @@ void Game::init(){
 
 void Game::update(){
 	// Entity *entity;
-	player -> control(Event::control);
+	player -> update();
 
 }
 
@@ -67,13 +68,9 @@ void Game::render(){
 
 	player -> render();
 	SDL_RenderPresent(renderer);
-	SDL_Delay(50);
+	SDL_Delay(100);
 }
-/*
+
 void Game::input(){
-	for (int i =0; i < 5; i++){
-		std::cout << Event::control[i];
-	}
-	std::cout<<std::endl;
+	player -> control(Event::control);
 }
-*/

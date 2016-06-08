@@ -16,6 +16,7 @@ Player::Player(SDL_Renderer* renderer, int x, int y, int direction):Entity(x,y,d
 	}
 	texture = SDL_CreateTextureFromSurface(renderer, img);
 	SDL_FreeSurface( img );
+	Player::v_bullet.reserve(10);
 }
 
 void Player::render(){
@@ -32,6 +33,22 @@ void Player::render(){
 	dst.h = 33;
 
 	SDL_RenderCopyEx(renderer, texture, &clip, &dst, degrees, NULL, SDL_FLIP_NONE ); // Copy the texture into render
+	for (int i =0 ; i < (int)v_bullet.size(); i++){
+		v_bullet.at(i).render();
+	}
+}
+
+void Player::update(){
+	// Bullet bullet;
+	for (int i = (int)v_bullet.size() -1; i>=0; i--){
+		// bullet =
+		// bullet.update();
+		v_bullet.at(i).update();
+		if (!v_bullet.at(i).isActive()){
+			v_bullet.erase(v_bullet.begin()+ i);
+
+		}
+	}
 }
 
 void Player::control(bool control[]){
@@ -43,4 +60,8 @@ void Player::control(bool control[]){
 		}
 	}
 	loop_img = (loop_img +1) % 2 ;
+	if (control[4]){
+		Bullet bullet(renderer, x+11,y+11,direction);
+		v_bullet.push_back(bullet);
+	}
 }

@@ -1,7 +1,7 @@
 #include "entity.h"
 #include "game.h"
 
-const int Entity::SPEED = 10;
+const int Entity::SPEED = 15;
 const int Entity::DIRECTION_UP = 0;//UP
 const int Entity::DIRECTION_RIGHT = 1;//RIGHT
 const int Entity::DIRECTION_DOWN = 2;//DOWN

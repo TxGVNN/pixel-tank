@@ -55,7 +55,7 @@ void Game::init(){
 	background = SDL_CreateTextureFromSurface(renderer, img);
 	SDL_FreeSurface( img );
 
-	player = new Player(renderer, 100,100,0);
+	player = new Player(renderer, 15,15,0);
 }
 
 void Game::update(){

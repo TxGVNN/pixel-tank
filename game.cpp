@@ -2,9 +2,10 @@
 #include "event.h"
 
 
-const int Game::SCREEN_WIDTH = 640;
+const int Game::SCREEN_WIDTH = 690;
 const int Game::SCREEN_HEIGHT = 480;
 const int Game::SCREEN_LINE = 560;
+const int Game::CELL_SIZE = 15;
 
 Game::Game(){
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -17,8 +18,9 @@ Game::Game(){
 		SCREEN_HEIGHT,
 		SDL_WINDOW_SHOWN);
 
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED |
-			SDL_RENDERER_PRESENTVSYNC);
+	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+	xCell = SCREEN_WIDTH / CELL_SIZE;
+	yCell = SCREEN_HEIGHT / CELL_SIZE;
 
 	init();
 }
@@ -34,6 +36,7 @@ Game::~Game(){
 void Game::start()
 {
 	int i = 100;
+	init();
 	while(i>0){
 		input();
 		update();
@@ -42,13 +45,16 @@ void Game::start()
 	}
 }
 void Game::init(){
-	SDL_SetRenderDrawColor(renderer, 128, 130, 114, 0);
-	SDL_RenderClear(renderer);
+	IMG_Init(IMG_INIT_JPG);
+	SDL_Surface* img = IMG_Load("res/images/cell_empty.png");
+	IMG_Quit();
+	if (img == NULL) {
+		std::cout << "SDL_LoadBMP Error: " << SDL_GetError() << std::endl;
+	}
 
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-	SDL_RenderDrawLine(renderer, SCREEN_LINE, 0, SCREEN_LINE, SCREEN_HEIGHT);
+	background = SDL_CreateTextureFromSurface(renderer, img);
+	SDL_FreeSurface( img );
 
-	SDL_RenderPresent(renderer);
 	player = new Player(renderer, 100,100,0);
 }
 
@@ -62,6 +68,21 @@ void Game::render(){
 
 	SDL_SetRenderDrawColor(renderer, 128, 130, 114, 0);
 	SDL_RenderClear(renderer);
+
+
+	//Draw the Cell by calculating their positions
+	for (int i = 0; i < xCell * yCell; ++i){
+		int x = i % xCell;
+		int y = i / xCell;
+
+		SDL_Rect dst;
+		dst.x = x * CELL_SIZE;
+		dst.y = y * CELL_SIZE;
+		dst.w = CELL_SIZE;
+		dst.h = CELL_SIZE;
+		SDL_RenderCopy(renderer, background, NULL, &dst);
+
+	}
 
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 	SDL_RenderDrawLine(renderer, 560, 0, 560, 480);

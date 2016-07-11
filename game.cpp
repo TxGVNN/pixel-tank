@@ -69,7 +69,6 @@ void Game::render(){
 	SDL_SetRenderDrawColor(renderer, 128, 130, 114, 0);
 	SDL_RenderClear(renderer);
 
-
 	//Draw the Cell by calculating their positions
 	for (int i = 0; i < xCell * yCell; ++i){
 		int x = i % xCell;
@@ -85,7 +84,7 @@ void Game::render(){
 	}
 
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-	SDL_RenderDrawLine(renderer, 560, 0, 560, 480);
+	SDL_RenderDrawLine(renderer, 600, 0, 600, 480);
 
 	player -> render();
 	SDL_RenderPresent(renderer);

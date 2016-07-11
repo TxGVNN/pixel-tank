@@ -5,6 +5,20 @@ Bullet::Bullet(SDL_Renderer* renderer, int x, int y, int direction): Entity(x,y,
 	Bullet::direction = direction;
 	Bullet::x = x;
 	Bullet::y = y;
+	
+	if (direction == Bullet::DIRECTION_UP){
+		Bullet::y = y - 15;
+	}
+	if (direction == Bullet::DIRECTION_DOWN){
+		Bullet::y = y + 15;
+	}
+	if (direction == Bullet::DIRECTION_LEFT){
+		Bullet::x = x + 15;
+	}
+	if (direction == Bullet::DIRECTION_RIGHT){
+		Bullet::x = x + 15;
+	}
+
 	noncollision = true;
 	active = true;
 

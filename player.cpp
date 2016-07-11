@@ -22,15 +22,15 @@ Player::Player(SDL_Renderer* renderer, int x, int y, int direction):Entity(x,y,d
 void Player::render(){
 	SDL_Rect clip;
 	clip.x = 0;
-	clip.y = loop_img*33;
-	clip.w = 33;
-	clip.h = 33;
+	clip.y = loop_img*72;
+	clip.w = 72;
+	clip.h = 72;
 	// std::cout << x << " " << y <<std::endl;
 	SDL_Rect dst;
 	dst.x = x;
 	dst.y = y;
-	dst.w = 33;
-	dst.h = 33;
+	dst.w = 45;
+	dst.h = 45;
 
 	SDL_RenderCopyEx(renderer, texture, &clip, &dst, degrees, NULL, SDL_FLIP_NONE ); // Copy the texture into render
 	for (int i =0 ; i < (int)v_bullet.size(); i++){
@@ -61,7 +61,7 @@ void Player::control(bool control[]){
 	}
 	loop_img = (loop_img +1) % 2 ;
 	if (control[4]){
-		Bullet bullet(renderer, x+11,y+11,direction);
+		Bullet bullet(renderer, x+15,y+15,direction);
 		v_bullet.push_back(bullet);
 	}
 }

@@ -22,14 +22,14 @@ void Bullet::render(){
 	SDL_Rect clip;
 	clip.x = 0;
 	clip.y = 0;
-	clip.w = 11;
-	clip.h = 11;
+	clip.w = 24;
+	clip.h = 24;
 	// std::cout << x << " " << y <<std::endl;
 	SDL_Rect dst;
 	dst.x = x;
 	dst.y = y;
-	dst.w = 11;
-	dst.h = 11;
+	dst.w = 15;
+	dst.h = 15;
 
 	SDL_RenderCopy(renderer, texture, &clip, &dst); // Copy the texture into render
 }
@@ -38,7 +38,7 @@ void Bullet::update(){
 	if (!runAvailble()) {
 		active = false;
 	} else {
-		move(8);
+		move(15);
 	}
 }
 

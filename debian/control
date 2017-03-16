@@ -1,0 +1,15 @@
+Source: pixel-tank
+Section: Games
+Priority: optional
+Maintainer: TxGVNN <txgvnn@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/TxGVNN/pixel-tank
+#Vcs-Git: git://anonscm.debian.org/collab-maint/pixel-tank.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/pixel-tank.git;a=summary
+
+Package: pixel-tank
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsdl2-image-2.0-0, libsdl2-mixer-2.0-0, libsdl2-ttf-2.0-0
+Description: Game tank battle
+ <insert long description, indented with spaces>

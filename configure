@@ -4123,7 +4123,6 @@ fi
 
 
 # Checks for libraries.
-# FIXME: Replace `main' with a function in `-lSDL2_image':
 
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lSDL2_image" >&5
 $as_echo_n "checking for main in -lSDL2_image... " >&6; }
@@ -4164,7 +4163,6 @@ _ACEOF
 
 fi
 
-# FIXME: Replace `main' with a function in `-lSDL2_mixer':
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lSDL2_mixer" >&5
 $as_echo_n "checking for main in -lSDL2_mixer... " >&6; }
 if ${ac_cv_lib_SDL2_mixer_main+:} false; then :
@@ -4204,7 +4202,6 @@ _ACEOF
 
 fi
 
-# FIXME: Replace `main' with a function in `-lSDL2_ttf':
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lSDL2_ttf" >&5
 $as_echo_n "checking for main in -lSDL2_ttf... " >&6; }
 if ${ac_cv_lib_SDL2_ttf_main+:} false; then :

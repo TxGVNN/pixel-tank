@@ -10,6 +10,6 @@ Homepage: https://github.com/TxGVNN/pixel-tank
 
 Package: pixel-tank
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libsdl2-image-2.0-0, libsdl2-mixer-2.0-0, libsdl2-ttf-2.0-0
+Depends: ${shlibs:Depends}, ${misc:Depends},libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libsdl2-2.0-0 (>= 2.0.0), libsdl2-image-2.0-0 (>= 2.0.0), libsdl2-mixer-2.0-0 (>= 2.0.0), libsdl2-ttf-2.0-0 (>=2.0.0), libstdc++6 (>= 4.9)
 Description: Game tank battle
  <insert long description, indented with spaces>

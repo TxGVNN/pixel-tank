@@ -3,7 +3,9 @@
 [SDL2 - Simple DirectMedia Layer](https://www.libsdl.org/)
 
 ## Build
+```
 ./configure && make
+```
 
 ## Screens 
 ![images](http://i.imgur.com/Ixk2MQ1.png)

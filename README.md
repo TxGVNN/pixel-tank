@@ -2,6 +2,12 @@
 ## Dependencies
 [SDL2 - Simple DirectMedia Layer](https://www.libsdl.org/)
 
+On Debian GNU/Linux 
+
+```
+apt-get install g++ make binutils libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+```
+
 ## Build
 ```
 ./configure && make

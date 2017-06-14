@@ -5,9 +5,9 @@
 class Event
 {
 
-public:
-	static SDL_Event event;
-	static bool control[5];
-	static int checkEvent(void *data);
+ public:
+    static SDL_Event event;
+    static bool control[5];
+    static int checkEvent(void *data);
 };
 #endif

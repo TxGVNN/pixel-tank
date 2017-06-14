@@ -4,14 +4,14 @@
 
 class Bullet: public Entity
 {
-private:
-	SDL_Renderer* renderer;
-	SDL_Texture *texture;
-public:
-	Bullet(SDL_Renderer* renderer, int x, int y, int direction);
-	void render();
-	void update();
-	bool isActive();
+ private:
+    SDL_Renderer* renderer;
+    SDL_Texture *texture;
+ public:
+    Bullet(SDL_Renderer* renderer, int x, int y, int direction);
+    void render();
+    void update();
+    bool isActive();
 };
 
 
